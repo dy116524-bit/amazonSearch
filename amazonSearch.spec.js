@@ -1,4 +1,4 @@
-// tests/amazonSearch.spec.js
+/amazonSearch.spec.js
 const { test, expect } = require('@playwright/test');
 
 const SEARCH_DATA = [
