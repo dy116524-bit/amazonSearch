@@ -1,19 +1,14 @@
-// playwright.config.js
-const { defineConfig } = require('@playwright/test');
+import { defineConfig } from '@playwright/test';
 
-module.exports = defineConfig({
+export default defineConfig({
   testDir: './tests',
-  /* Run tests in files in parallel */
-  fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined, // 'undefined' uses the number of CPU cores
-  reporter: 'html',
+  /* This runs tests in parallel */
+  fullyParallel: true, 
+  /* Number of CPU cores to use. 'undefined' uses all available */
+  workers: undefined, 
+  reporter: 'list',
   use: {
-    headless: true, // Set to false if you want to watch the magic happen
-    screenshot: 'on',
+    headless: false, // Set to true for faster, invisible execution
+    screenshot: 'only-on-failure',
   },
 });
