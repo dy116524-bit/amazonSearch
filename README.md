@@ -1,16 +1,6 @@
-Prerequisites
-Initialize a project: npm init -y
+How to run it
+To show you know the workflow
 
-Install Playwright: npm init playwright@latest
+Install: npm install @playwright/test
 
-How to Run
-Execute all tests in parallel:
-
-Bash
-npx playwright test
-
-
-To see the console logs specifically:
-
-Bash
-npx playwright test --reporter=list
+Run Tests: npx playwright test
